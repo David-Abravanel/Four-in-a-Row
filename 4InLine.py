@@ -1,6 +1,5 @@
 from colorama import init, Fore, Style
 init()
-
 # פונקציית בדיקה אם יש זכיה
 def chk(cubic,C,R,P):
 
