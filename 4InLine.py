@@ -1,8 +1,8 @@
 from colorama import init, Fore, Style
 init()
+
 # פונקציית בדיקה אם יש זכיה
 def chk(cubic,C,R,P):
-
     # מוודא שורה אופקית מלאה
     for i in range(7):
         if(cubic[R][i] == P and cubic[R][i+1] == P and cubic[R][i+2] == P and cubic[R][i+3] == P):
