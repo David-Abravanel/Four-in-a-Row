@@ -1,14 +1,13 @@
 
 # פונקציית בדיקה אם יש זכיה
 def chk(cubic,C,R,P):
-
     # מוודא שורה אופקית מלאה
     for i in range(7):
-        if(cubic[R][i] == P and cubic[R][i+1] == P and cubic[R][i+2] == P and cubic[R][i+3] == P):
-            return 1
+        if(P == cubic[R][i] == cubic[R][i+1] == cubic[R][i+2] == cubic[R][i+3]):
+            return True
     # מוודא שורה אנכית מלאה
-    if((R<7) and cubic[R][C] == P and cubic[R+1][C] == P and cubic[R+2][C] == P and cubic[R+3][C] == P):
-        return 1
+    if((R<7) and P == cubic[R][C] == cubic[R+1][C] == cubic[R+2][C] == cubic[R+3][C]):
+        return True
     # מוודא שורה אלכסונית יורדת לימין מלאה
     c = r = 0
     if(C>=R):
@@ -16,8 +15,8 @@ def chk(cubic,C,R,P):
     else:
         r = R-C
     while(c+3 < 10 and r+3 < 10):
-        if(cubic[r][c] == P and cubic[r+1][c+1] == P and cubic[r+2][c+2] == P and cubic[r+3][c+3] == P):
-            return 1
+        if(P == cubic[r][c] == cubic[r+1][c+1] == cubic[r+2][c+2] == cubic[r+3][c+3]):
+            return True
         c += 1
         r += 1
     # מוודא שורה אלכסונית יורדת לשמאל מלאה 
@@ -28,11 +27,11 @@ def chk(cubic,C,R,P):
         c = 9
         r = R+C-9
     while(c-3 > -1 and r+3 < 10):
-        if(cubic[r][c] == P and cubic[r+1][c-1] == P and cubic[r+2][c-2] == P and cubic[r+3][c-3] == P):
-            return 1
+        if(P == cubic[r][c] == cubic[r+1][c-1] == cubic[r+2][c-2] == cubic[r+3][c-3]):
+            return True
         c -= 1
         r += 1
-
+    return False
 # פונקציית הדפסת מבנה המשחק  
 def printer(cubic):
     print(F'\n       ','_'*39)
@@ -75,7 +74,7 @@ def user(cubic):
                 row = i
                 printer(cubic)
                 # בדיקת אפשרות זכיה מעל תור 7
-                if(j >= 6 and chk(cubic,useIN,row,player) == 1):
+                if(j >= 6 and chk(cubic,useIN,row,player)):
                     if(player == 0):    
                         print(F'\n\n{a} congratulation, you are the winer!\n')
                     else:
