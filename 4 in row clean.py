@@ -35,14 +35,14 @@ def chk(cubic,C,R,P):
 
 # פונקציית הדפסת מבנה המשחק  
 def printer(cubic):
-    print(F'\n       _'*39)
+    print(F'\n       ','_'*39)
     for i in range(10):
         print('       ', end = '')
         for j in range(10):
             if(cubic[i][j] == 1):
                 print('| O ' ,end = '')
             elif(cubic[i][j] == 0):
-                print('| O ' ,end = '')
+                print('| X ' ,end = '')
             else:
                 print('| - ' ,end = '')
         print('|')
