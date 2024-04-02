@@ -69,9 +69,9 @@ def user(cubic):
         if (useIN > 9 or useIN < 0 or cubic[0][useIN] != -1):
             print(Fore.RED + '   >> Error !!!'+ Fore.BLUE + '\n   - the selected column is already taken\n   - or that the number entered is nat between 1-10\n\ntry again >>')
             continue
+        # לולאת הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
         for i in range(9,-1,-1):
             if(cubic[i][useIN] == -1):
-                # הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
                 cubic[i][useIN] = player
                 row = i
                 printer(cubic)
