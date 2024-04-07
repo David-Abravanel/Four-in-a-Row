@@ -86,5 +86,5 @@ def user(cubic):
     print('\n   >> ther are no winers!\n\n   >> try again...\n\n')
 
 # # # # Main # # # #       
-cubic = [[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10]
+cubic = [[-1 for j in range(10)] for i in range(10)]
 user(cubic)
