@@ -79,14 +79,12 @@ def user(cubic):
                         print(F'\n\n{a} congratulation, you are the winer!\n')
                     else:
                         print(F'\n\n{b} congratulation, you are the winer!\n')
-                    j = 99
-                    break
-                # בסיום הריצה ללא מנצחים
-                elif(j == 99):
-                    print('\n   >> ther are no winers!\n\n  >> try again...\n\n')
+                    return 0
                 break
+                # בסיום הריצה ללא מנצחים
         player = (player + 1) %2
         j += 1
+    print('\n   >> ther are no winers!\n\n   >> try again...\n\n')
 
 # # # # Main # # # #       
 cubic = [[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10,[-1]*10]
