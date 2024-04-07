@@ -47,7 +47,7 @@ def printer(cubic):
             else:
                 print(Fore.CYAN + '|',Fore.YELLOW + '- ' ,end = '')
         print(Fore.CYAN +'|')
-    print(F'       ',Fore.YELLOW +'_1___2___3___4___5___6___7___8___9__10_', Style.RESET_ALL + '')
+    print(F'       |',Fore.YELLOW +'1   2   3   4   5   6   7   8   9  10', Fore.CYAN + '|\n      /=========================================\\\n     |||||||||||||||||||||||||||||||||||||||||||||')
 
 # פונקציית המשתמש
 def user(cubic):
