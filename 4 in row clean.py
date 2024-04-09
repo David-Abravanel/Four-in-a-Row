@@ -78,9 +78,10 @@ def user(cubic):
                         print(F'\n\n{a} congratulation, you are the winer!\n')
                     else:
                         print(F'\n\n{b} congratulation, you are the winer!\n')
-                    return 0
+                    return
                 break
         player = (player + 1) %2
+        j += 1
     # בסיום הריצה ללא מנצחים
     print('\n   >> ther are no winers!\n\n   >> try again...\n\n')
 

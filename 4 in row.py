@@ -55,9 +55,9 @@ def user(cubic):
     a = input('\nFirst player enter your name:  ' + Fore.RED)
     b = input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN)
     printer(cubic)
-    player = 0
+    player = j = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
-    for j in range(100):
+    while(j < 100):
         # קבלת מיקום עמודה מהמשתמש
         if(player == 0):
             useIN = int(input('\n' + Fore.RED + F'{a}' + Style.RESET_ALL + ' enter the column you chose: '))
@@ -84,6 +84,7 @@ def user(cubic):
                     return
                 break
         player = (player + 1) %2
+        j += 1
     # בסיום הריצה ללא מנצחים
     print(Style.RESET_ALL + '\n   >> ther are no winers!\n\n  ',Fore.GREEN + '>> try again...\n\n')
 
