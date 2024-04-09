@@ -76,7 +76,7 @@ def user(cubic):
                 cubic[i][useIN] = player
                 row = i
                 printer(cubic)
-                # בדיקת אפשרות זכיה מתור 6 ומעלה
+                # בדיקת אפשרות זכיה מתור 7 ומעלה
                 if(j >= 6 and chk(cubic,useIN,row,player)):
                     if(player == 0):    
                         print(Fore.RED + F'\n\n{a}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
