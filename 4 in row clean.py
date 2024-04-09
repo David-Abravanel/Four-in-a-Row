@@ -69,7 +69,6 @@ def user(cubic):
         # לולאת הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
         for i in range(9,-1,-1):
             if(cubic[i][useIN] == -1):
-                # הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
                 cubic[i][useIN] = player
                 row = i
                 printer(cubic)
