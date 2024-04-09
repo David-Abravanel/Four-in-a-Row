@@ -34,6 +34,7 @@ def chk(cubic,C,R,P):
         c -= 1
         r += 1
     return False
+
 # פונקציית הדפסת מבנה המשחק  
 def printer(cubic):
     print(F'\n       ',Fore.CYAN +'_'*39)
@@ -51,13 +52,12 @@ def printer(cubic):
 
 # פונקציית המשתמש
 def user(cubic):
-    print()
-    a = input('First player enter your name:  ' + Fore.RED)
+    a = input('\nFirst player enter your name:  ' + Fore.RED)
     b = input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN)
     printer(cubic)
-    player = j = 0
+    player = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
-    while (j <100):
+    for j in range(100):
         # קבלת מיקום עמודה מהמשתמש
         if(player == 0):
             useIN = int(input('\n' + Fore.RED + F'{a}' + Style.RESET_ALL + ' enter the column you chose: '))
@@ -72,6 +72,7 @@ def user(cubic):
         # לולאת הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
         for i in range(9,-1,-1):
             if(cubic[i][useIN] == -1):
+                # הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
                 cubic[i][useIN] = player
                 row = i
                 printer(cubic)
@@ -81,14 +82,11 @@ def user(cubic):
                         print(Fore.RED + F'\n\n{a}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
                     else:
                         print(Fore.GREEN + F'\n\n{b}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
-                    j = 99
-                    break
-                # בסיום הריצה ללא מנצחים
-                elif(j == 99):
-                    print(Style.RESET_ALL + '\n   >> ther are no winers!\n\n  ',Fore.GREEN + '>> try again...\n\n')
+                    return
                 break
         player = (player + 1) %2
-        j += 1
+    # בסיום הריצה ללא מנצחים
+    print(Style.RESET_ALL + '\n   >> ther are no winers!\n\n  ',Fore.GREEN + '>> try again...\n\n')
 
 # # # # Main # # # #       
 cubic = [[-1 for j in range(10)] for i in range(10)]

@@ -31,6 +31,7 @@ def chk(cubic,C,R,P):
         c -= 1
         r += 1
     return False
+
 # פונקציית הדפסת מבנה המשחק  
 def printer(cubic):
     print(F'\n       ','_'*39)
@@ -48,13 +49,12 @@ def printer(cubic):
 
 # פונקציית המשתמש
 def user(cubic):
-    print()
-    a = input('First Player enter your name:  ')
+    a = input('\nFirst Player enter your name:  ')
     b = input('Second Player enter your name:  ')
     printer(cubic)
     player = j = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
-    while (j <100):
+    while j in range(100):
         # קבלת מיקום עמודה מהמשתמש
         if(player == 0):
             useIN = int(input(F'\n{a} enter the column you chose: '))
@@ -66,13 +66,14 @@ def user(cubic):
         if (useIN > 9 or useIN < 0 or cubic[0][useIN] != -1):
             print('   >> Error !!!\n   - the selected column is already taken\n   - the number entered is greater than 10\n\ntry again >>')
             continue
+        # לולאת הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
         for i in range(9,-1,-1):
             if(cubic[i][useIN] == -1):
                 # הצבה במערך במיקום הפנוי בעמודת בחירת המשתמש
                 cubic[i][useIN] = player
                 row = i
                 printer(cubic)
-                # בדיקת אפשרות זכיה מעל תור 7
+                # בדיקת אפשרות זכיה מתור 6 ומעלה
                 if(j >= 6 and chk(cubic,useIN,row,player)):
                     if(player == 0):    
                         print(F'\n\n{a} congratulation, you are the winer!\n')
@@ -80,9 +81,8 @@ def user(cubic):
                         print(F'\n\n{b} congratulation, you are the winer!\n')
                     return 0
                 break
-                # בסיום הריצה ללא מנצחים
         player = (player + 1) %2
-        j += 1
+    # בסיום הריצה ללא מנצחים
     print('\n   >> ther are no winers!\n\n   >> try again...\n\n')
 
 # # # # Main # # # #       
