@@ -37,18 +37,14 @@ def chk(cubic,C,R,P):
 
 # פונקציית הדפסת מבנה המשחק  
 def printer(cubic):
+    pice = [Fore.CYAN + '|'+Fore.RED + ' O ',Fore.CYAN + '|'+Fore.GREEN + ' O ',Fore.CYAN + '|'+Fore.YELLOW + ' - ']
     print(F'\n       ',Fore.CYAN +'_'*39)
     for i in range(10):
         print('       ', end = '')
         for j in range(10):
-            if(cubic[i][j] == 1):
-                print(Fore.CYAN + '|',Fore.GREEN + 'O ' ,end = '')
-            elif(cubic[i][j] == 0):
-                print(Fore.CYAN + '|',Fore.RED + 'O ' ,end = '')
-            else:
-                print(Fore.CYAN + '|',Fore.YELLOW + '- ' ,end = '')
+                print(pice[cubic[i][j]] ,end = '')
         print(Fore.CYAN +'|')
-    print('       |',Fore.YELLOW +'1   2   3   4   5   6   7   8   9  10', Fore.CYAN + '|\n      /=========================================\\\n     |||||||||||||||||||||||||||||||||||||||||||||')
+    print('       |',Fore.YELLOW +'1   2   3   4   5   6   7   8   9  10', Fore.CYAN + '|\n      /','='*39,'\\\n     ','|'*43)
 
 # פונקציית המשתמש
 def user(cubic):
