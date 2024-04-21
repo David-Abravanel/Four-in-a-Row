@@ -36,7 +36,7 @@ def chk(C,R,P):
     return False
 
 # פונקציית הדפסת מבנה המשחק  
-def printer():
+def Display():
     pice = [Fore.RED + ' O ',Fore.GREEN + ' O ',Fore.YELLOW + ' - ']
     # מבנה המשחק
     print(F'\n       ',Fore.CYAN +'_'*39)
@@ -51,7 +51,7 @@ def printer():
 # פונקציית המשתמש
 def user():
     players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
-    printer()
+    Display()
     player = turn = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
     while(turn < 100):
@@ -71,7 +71,7 @@ def user():
             if(cubic[i][useIN] == -1):
                 cubic[i][useIN] = player
                 row = i
-                printer()
+                Display()
                 # בדיקת אפשרות זכיה מתור 7 ומעלה
                 if(turn > 5 and chk(useIN,row,player)):
                     print(F'\n\n{players_name[player]} congratulation, you are the winer!\n')
