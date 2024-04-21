@@ -44,7 +44,7 @@ def Display():
     print('       | 1   2   3   4   5   6   7   8   9  10 |\n      /=========================================\\\n     |||||||||||||||||||||||||||||||||||||||||||||')
 
 # פונקציית המשתמש
-def user():
+def User():
     players_name = [input('\nFirst Player enter your name:  '),input('Second Player enter your name:  ')]
     Display()
     player = j = 0
@@ -76,4 +76,4 @@ def user():
 
 # # # # Main # # # #       
 cubic = [[-1 for j in range(10)] for i in range(10)]
-user()
+User()

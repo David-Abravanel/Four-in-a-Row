@@ -2,7 +2,7 @@ from colorama import init, Fore, Style
 init()
 
 # פונקציית בדיקה אם יש זכיה
-def chk(C,R,P):
+def Check(C,R,P):
     # מוודא שורה אופקית מלאה
     for i in range(7):
         if(P == cubic[R][i] == cubic[R][i+1] == cubic[R][i+2] == cubic[R][i+3]):
@@ -49,7 +49,7 @@ def Display():
     print('       |',Fore.YELLOW +'1   2   3   4   5   6   7   8   9  10', Fore.CYAN + '|\n      /','='*39,'\\\n     ','|'*43)
 
 # פונקציית המשתמש
-def user():
+def User():
     players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
     Display()
     player = turn = 0
@@ -73,7 +73,7 @@ def user():
                 row = i
                 Display()
                 # בדיקת אפשרות זכיה מתור 7 ומעלה
-                if(turn > 5 and chk(useIN,row,player)):
+                if(turn > 5 and Check(useIN,row,player)):
                     print(F'\n\n{players_name[player]} congratulation, you are the winer!\n')
                     return
                 break
@@ -84,4 +84,4 @@ def user():
 
 # # # # Main # # # #       
 cubic = [[-1 for j in range(10)] for i in range(10)]
-user()
+User()
