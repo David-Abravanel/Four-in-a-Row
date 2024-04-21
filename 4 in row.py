@@ -48,19 +48,18 @@ def printer(cubic):
 
 # פונקציית המשתמש
 def user(cubic):
-    a = input('\nFirst player enter your name:  ' + Fore.RED)
-    b = input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN)
+    p = [a,b] = Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL,Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL
     printer(cubic)
     player = j = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
     while(j < 100):
         # קבלת מיקום עמודה מהמשתמש
-        if(player == 0):
-            useIN = int(input('\n' + Fore.RED + F'{a}' + Style.RESET_ALL + ' enter the column you chose: '))
-        else:
-            useIN = int(input('\n' + Fore.GREEN + F'{b}' + Style.RESET_ALL + ' enter the column you chose: '))
-        if(useIN > 0 or useIN < 0): useIN -= 1
-        else: useIN = 9   
+        try:
+            useIN = int(input('\n' + Fore.RED + F'{p[player]}' + Style.RESET_ALL + ' enter the column you chose: '))-1
+            if useIN == -1: useIN = 9
+        except ValueError:
+            print('wirde...')
+            continue
         # בדיקה שהערכים שהוזנו אפשריים - ובדיקה האם העמודה מלאה
         if (useIN > 9 or useIN < 0 or cubic[0][useIN] != -1):
             print(Fore.RED + '   >> Error !!!'+ Fore.BLUE + '\n   - Either the column is already full\n   - or the number entered is not between 1-10\n\ntry again >>')
@@ -73,10 +72,7 @@ def user(cubic):
                 printer(cubic)
                 # בדיקת אפשרות זכיה מתור 7 ומעלה
                 if(j >= 6 and chk(cubic,useIN,row,player)):
-                    if(player == 0):    
-                        print(Fore.RED + F'\n\n{a}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
-                    else:
-                        print(Fore.GREEN + F'\n\n{b}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
+                    print(Fore.RED + F'\n\n{p[player]}',Style.RESET_ALL + ' congratulation, you are the winer!\n')
                     return
                 break
         player = (player + 1) %2
