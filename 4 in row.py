@@ -22,33 +22,33 @@ def Check(current_column,current_row,current_player):
 
 # פונקציית הדפסת מבנה המשחק  
 def Display():
-    pice = [Fore.RED + '● ',Fore.GREEN + '● ',Fore.YELLOW + '- ']
+    pice = [Fore.RED + '● ',Fore.CYAN + '● ',Fore.YELLOW + '- ']
     # מבנה המשחק
-    print('\n       ',Fore.CYAN + '_'*49)
+    print('\n       ',Fore.WHITE + '_'*39)
     for row in range(10):
         print('       ', end = '')
         for column in range(10):
-                print(Fore.CYAN + '│',pice[cubic[row][column]] ,end = '')
-        print(Fore.CYAN +'│')
+                print(Fore.WHITE + '│',pice[cubic[row][column]] ,end = '')
+        print(Fore.WHITE +'│')
     # תחתית
-    print(Fore.CYAN +'       │',end = '')
+    print(Fore.WHITE +'       │',end = '')
     for i in range(1,10):
         print(' '+Fore.YELLOW + str(i) , end = '  ')
-    print(Fore.YELLOW +'10',Fore.CYAN +'│')
+    print(Fore.YELLOW +'10',Fore.WHITE +'│')
 
 # מוודא קבלת ערך עמודה תקף מהמשתמש
 def get_valid_column(players_name,player):
     while True:
         try:
-            column = int(input(F'\n{players_name[player]} Enter the column you chose (1 to 10): ')) - 1
+            column = int(input(F'\n{players_name[player]} Chose a column between 1 and 10: ')) - 1
             if column < 0 or column > 9:
-                print("Invalid column. Please enter a number between 1 and 10.")
+                print(Fore.RED + " >> Invalid column. \nPlease enter a number between 1 and 10.")
             elif cubic[0][column] != -1:
-                print('column full. Please chose anather column.')
+                print(Fore.RED + ' >> column full. \nPlease chose anather column.')
             else:
                 return column
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print(Fore.RED + " >> Invalid input. \nPlease enter a number.")
 
 # פונקציית הצבה במיקום הנבחר
 def Placement(useIN,player):
@@ -60,7 +60,7 @@ def Placement(useIN,player):
 
 # פונקציית המשתמש
 def User():
-    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
+    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.CYAN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.CYAN) + Style.RESET_ALL]
     Display()
     player = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
