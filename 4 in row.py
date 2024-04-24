@@ -3,18 +3,18 @@ init(autoreset=True)
 
 # פונקציית בדיקה אם יש זכיה
 def Check(current_column,current_row,current_player):
-    # מוודא שורה אופקית מלאה
+    # מוודא אופקית שורה בת 4 אברים מלאה
     for column in range(current_column-3,current_column+1):
         if(-1 < column < 7 and current_player == cubic[current_row][column] == cubic[current_row][column+1] == cubic[current_row][column+2] == cubic[current_row][column+3]):
             return True
-    # מוודא שורה אנכית מלאה
+    # מוודא שורה אנכית שורה בת 4 אברים מלאה
     if current_row<7 and (current_player == cubic[current_row][current_column] == cubic[current_row+1][current_column] == cubic[current_row+2][current_column] == cubic[current_row+3][current_column]):
         return True
-    # מוודא שורה אלכסונית יורדת לימין מלאה
+    # מוודא שורה אלכסונית יורדת לימין שורה בת 4 אברים מלאה
     for row,column in zip(range(current_row-3,current_row+1), range(current_column-3,current_column+1)):
         if 7 > column > -1 and 7 > row > -1 and (current_player == cubic[row][column] == cubic[row+1][column+1] == cubic[row+2][column+2] == cubic[row+3][column+3]):
             return True
-    # מוודא שורה אלכסונית יורדת לשמאל מלאה
+    # מוודא שורה אלכסונית יורדת לשמאלה שורה בת 4 אברים מלאה
     for row,column in zip(range(current_row-3,current_row+1), range(current_column+3,current_column-1,-1)):
         if 10 > column > -1 and 7 > row > -1 and (current_player == cubic[row][column] == cubic[row+1][column-1] == cubic[row+2][column-2] == cubic[row+3][column-3]):
             return True
@@ -24,17 +24,12 @@ def Check(current_column,current_row,current_player):
 def Display():
     pice = [Fore.RED + ' ● ',Fore.GREEN + ' ● ',Fore.YELLOW + ' - ']
     # מבנה המשחק
-    print('\n       ','_'*39)
+    print('\n       ','_'*39,'\n       ',end = '')
     for row in range(10):
-        print('       ', end = '')
         for column in range(10):
-                print('│'+pice[cubic[row][column]] ,end = '')
-        print('│')
+                print('│'+pice[cubic[row][column]] ,end = '│\n       '*(column-8))
     # תחתית
-    print('       │',end = '')
-    for i in range(1,10):
-        print(' '+Fore.YELLOW + str(i) , end = '  ')
-    print(Fore.YELLOW +'10','│')
+    print('│ '+Fore.YELLOW+'1   2   3   4   5   6   7   8   9  10','│')
 
 # מוודא קבלת ערך עמודה תקף מהמשתמש
 def get_valid_column(players_name,player):
