@@ -22,19 +22,19 @@ def Check(current_column,current_row,current_player):
 
 # פונקציית הדפסת מבנה המשחק  
 def Display():
-    pice = [Fore.RED + '● ',Fore.CYAN + '● ',Fore.YELLOW + '- ']
+    pice = [Fore.RED + ' ● ',Fore.GREEN + ' ● ',Fore.YELLOW + ' - ']
     # מבנה המשחק
-    print('\n       ',Fore.WHITE + '_'*39)
+    print('\n       ','_'*39)
     for row in range(10):
         print('       ', end = '')
         for column in range(10):
-                print(Fore.WHITE + '│',pice[cubic[row][column]] ,end = '')
-        print(Fore.WHITE +'│')
+                print('│'+pice[cubic[row][column]] ,end = '')
+        print('│')
     # תחתית
-    print(Fore.WHITE +'       │',end = '')
+    print('       │',end = '')
     for i in range(1,10):
         print(' '+Fore.YELLOW + str(i) , end = '  ')
-    print(Fore.YELLOW +'10',Fore.WHITE +'│')
+    print(Fore.YELLOW +'10','│')
 
 # מוודא קבלת ערך עמודה תקף מהמשתמש
 def get_valid_column(players_name,player):
@@ -60,7 +60,7 @@ def Placement(useIN,player):
 
 # פונקציית המשתמש
 def User():
-    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.CYAN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.CYAN) + Style.RESET_ALL]
+    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
     Display()
     player = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
