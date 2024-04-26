@@ -47,15 +47,15 @@ def get_valid_column(players_name,player):
 
 # פונקציית הצבה במיקום הנבחר
 def Placement(useIN,player):
-    for row in range(9,-1,-1):
-        if (cubic[row][useIN] == -1):
-            cubic[row][useIN] = player
-            Display()
-            return row
+    row = 9-chk[useIN]
+    cubic[row][useIN] = player
+    chk[useIN] += 1
+    Display()
+    return row
 
 # פונקציית המשתמש
 def User():
-    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL  ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
+    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
     Display()
     player = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
@@ -72,6 +72,7 @@ def User():
     # בסיום הריצה ללא מנצחים
     print('\n   >> ther are no winers!\n\n  ',Fore.GREEN + '>> try again...\n\n')
 
-# # # # Main # # # #       
+# # # # Main # # # #
+chk = [0 for i in range(10)]             
 cubic = [[-1 for j in range(10)] for i in range(10)]
 User()
