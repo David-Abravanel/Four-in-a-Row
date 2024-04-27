@@ -1,5 +1,5 @@
 from colorama import init, Fore, Style, Back
-init(autoreset=True)
+init(autoreset = True)
 
 # פונקציית בדיקה אם יש זכיה
 def Check(current_column,current_row,current_player):
@@ -55,7 +55,7 @@ def Placement(useIN,player):
 
 # פונקציית המשתמש
 def User():
-    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
+    players_name = [Fore.RED + input('\nFirst player enter your name:  ' + Fore.RED) + Style.RESET_ALL ,  Fore.GREEN + input(Style.RESET_ALL + 'second player enter your name:  '+ Fore.GREEN) + Style.RESET_ALL]
     Display()
     player = 0
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
