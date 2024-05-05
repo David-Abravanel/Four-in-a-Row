@@ -32,7 +32,7 @@ def Display():
     print('│ '+Fore.YELLOW+'1   2   3   4   5   6   7   8   9  10','│')
 
 # מוודא קבלת ערך עמודה תקף מהמשתמש
-def get_valid_column(players_name,player):
+def Get_valid_column(players_name,player):
     while True:
         try:
             column = int(input(F'\n{players_name[player]} Chose a column between 1 and 10: ')) - 1
@@ -61,7 +61,7 @@ def User():
     # לולאת ריצה עד סיום המערך 10*10 או בניצחון
     for turn in range(100):
         # קבלת מיקום עמודה תקף מהמשתמש
-        useIN = get_valid_column(players_name,player)
+        useIN = Get_valid_column(players_name,player)
         # הצבה במקום הנבחר
         row = Placement(useIN,player)
         # בדיקת זכיה
