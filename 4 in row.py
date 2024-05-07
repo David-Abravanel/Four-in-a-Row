@@ -1,3 +1,4 @@
+import os
 from colorama import init, Fore, Style, Back
 init(autoreset = True)
 
@@ -22,6 +23,7 @@ def Check(current_column,current_row,current_player):
 
 # פונקציית הדפסת מבנה המשחק  
 def Display():
+    os.system('cls')
     pice = [Fore.RED + ' ● ',Fore.GREEN + ' ● ',Fore.YELLOW + ' - ']
     # מבנה המשחק
     print('\n       ','_'*39,'\n       ',end = '')
