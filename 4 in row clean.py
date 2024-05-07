@@ -1,3 +1,4 @@
+import os
 # פונקציית בדיקה אם יש זכיה
 def Check(current_column,current_row,current_player):
     # מוודא אופקית שורה בת 4 אברים מלאה
@@ -19,6 +20,7 @@ def Check(current_column,current_row,current_player):
 
 # פונקציית הדפסת מבנה המשחק  
 def Display():
+    os.system('cls')
     pice = [' ● ',' ○ ',' - ']
     # מבנה המשחק
     print('\n       ','_'*39,'\n       ',end = '')
