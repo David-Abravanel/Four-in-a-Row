@@ -24,7 +24,7 @@ def Check(current_column,current_row,current_player):
 # פונקציית הדפסת מבנה המשחק  
 def Display():
     os.system('cls')
-    pice = [Fore.RED + ' ● ',Fore.GREEN + ' ● ',Fore.YELLOW + ' - ']
+    pice = [Fore.RED + ' ● ',Fore.BLUE + ' ● ',Fore.YELLOW + ' - ']
     # מבנה המשחק
     print('\n       ','_'*39,'\n       ',end = '')
     for row in range(10):
@@ -68,7 +68,7 @@ def User():
         row = Placement(useIN,player)
         # בדיקת זכיה
         if(turn > 5 and Check(useIN,row,player)):
-            print(F'\n\n{players_name[player]} congratulation, you are the winer!\n')
+            print(F'\n\n{players_name[player]} congratulation, you wine!\n')
             return
         player = (player + 1) %2
     # בסיום הריצה ללא מנצחים

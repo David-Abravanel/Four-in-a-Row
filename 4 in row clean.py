@@ -65,7 +65,7 @@ def User():
         row = Placement(useIN,player)
         # בדיקת זכיה
         if(turn > 5 and Check(useIN,row,player)):
-            print(F'\n\n{players_name[player]} congratulation, you are the winer!\n')
+            print(F'\n\n{players_name[player]} congratulation, you wine!\n')
             return
         player = (player + 1) %2
     # בסיום הריצה ללא מנצחים
